@@ -1,6 +1,6 @@
 <?php
 
-class CountryModel
+class VulkaanModel
 {
     private $db;
 
@@ -9,11 +9,15 @@ class CountryModel
         $this->db = new Database();
     }
 
-    public function getCountries()
+    public function getVulkaan()
     {
         $sql = "SELECT  Id
                        ,Naam
-                FROM   Country";
+                       ,Hoogte
+                       ,Land
+                       ,JaarLaatsteUitbarsting
+                       ,AantalSlachtoffers
+                FROM   Vulkaan";
 
         $this->db->query($sql);
 
